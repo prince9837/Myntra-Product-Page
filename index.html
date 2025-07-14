@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myntra Project</title>
+    <!-- custom css link -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Custom font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+<body>
+
+    <div id="item-container">
+        <div class="img-container">
+            <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2024/DECEMBER/3/JX0NHYO7_bff7e73010fb40efa595288451a85b46.jpg"
+                alt="">
+        </div>
+        <div class="content-container">
+            <div class="upper-content">
+
+                <h3>levis</h3>
+                <p>Pure Cotton Polo Collar T-shirt</p>
+                <p class="sold">Sold by Vishal Star</p>
+
+                <div class="size-content">
+                    <button onclick="Drop()" class="hideSizes">Size:S <i class="fa-solid fa-angle-down"></i></button>
+                    <button onclick="Dropp()" class="angle-down">Qty:1 <i class="fa-solid fa-angle-down"></i></button>
+                </div>
+            </div>
+
+            <div class="lower-content">
+                <div class="return"><span class="rupee"><i class="fa-solid fa-indian-rupee-sign"></i>702</span>
+                    <span class="doller"> <del><i class="fa-solid fa-indian-rupee-sign"></i>1899</del></span>
+                    <span class="discount">63% OFF</span>
+                </div>
+
+                <div class="return">
+                    <p class="days"><i class="fa-solid fa-rotate-left"></i>14 days</p>
+                    <span class="available">return available</span>
+                </div>
+
+                <div class="return">
+                    <p><i class="fa-solid fa-truck-fast"></i>Delivery by </p> <span class="jun">15 jun 2025</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="second-containerr">
+        <div class="flex-container">
+            <div class="img-container">
+                <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2024/DECEMBER/3/JX0NHYO7_bff7e73010fb40efa595288451a85b46.jpg"
+                    alt="">
+            </div>
+            <div class="content-container">
+                <div class="upper-content">
+                    <div class="close-slider">
+                        <h3>Bonkers Corner</h3>
+                        <i class="fa-solid fa-xmark" onclick="hideSlider()"></i>
+
+                    </div>
+
+                    <p>Men Cotton Striped Oversize t-shirt</p>
+
+                    <div class="return"><span class="rupee"><i class="fa-solid fa-indian-rupee-sign"></i>702</span>
+                        <span class="doller"> <del><i class="fa-solid fa-indian-rupee-sign"></i>1799</del></span>
+                        <span class="discount">63% OFF</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="size">
+            <h3>Select Size:</h3>
+
+            <div class="insertSizes">
+
+            </div>
+            <p>Seller: <b>BAD BRAINS STREETSTYLE PRIVATE LIMITED</b></p>
+            <button class="btn2" onclick="hideSizes()">DONE</button>
+        </div>
+    </div>
+
+    <div id="quantity-container">
+        <div class="select-container">
+            <h3>Select Quanity</h3>
+            <i class="fa-solid fa-xmark" onclick="hideQuantity()"></i>
+        </div>
+        <div class="lower-sizes">
+            <div class="all-sizes">
+                <div class="sizes">
+                </div>
+
+
+                <button onclick="hideSizess()">DONE</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        let dropslider = document.querySelector(".fa-angle-down");
+        let slider = document.querySelector("#second-containerr");
+        let button2 = document.querySelector(".btn2");
+        let hideslider = document.querySelectorAll(".fa-xmark");
+        let button = document.querySelector(".btn");
+        let insertSizes = document.querySelector(".insertSizes");
+        let hideSlises = document.querySelector(".hideSizes");
+        let quantity = document.querySelector("#quantity-container");
+        let numSize = document.querySelector(".sizes");
+        let angle = document.querySelector(".angle-down");
+
+
+        let numSizes = ["1", "2", "3", "4", "5"];
+        numSizes.map((ele) => {
+            let div = document.createElement("div");
+            div.setAttribute("class", "num-sizes");
+            div.innerText = ele
+            div.innerHTML
+            numSize.append(div);
+            div.onclick = (e) => {
+                angle.innerText = `Size: ${e.target.innerText}`
+            }
+        })
+
+
+
+        let sizes = ["XS", "S", "M", "L", "XL", "XXL"];
+        sizes.map((ele) => {
+            let div = document.createElement("div");
+            div.setAttribute("class", "clickSize")
+            div.innerText = ele
+            insertSizes.append(div);
+            
+            div.onclick = (e) => {
+                hideSlises.innerText = `Size: ${e.target.innerText}`
+            }
+        }
+        )
+
+
+        function hideSizes() {
+            slider.style.top = "-100%";
+        }
+
+        function hideSizess() {
+            quantity.style.top = "-100%";
+        }
+
+        function Drop() {
+            slider.style.top = "220px";
+        }
+
+        function Dropp() {
+            quantity.style.top = "250px";
+        }
+
+        function hideSlider() {
+            slider.style.top = "-100%";
+        }
+
+        function hideQuantity() {
+            quantity.style.top = "-100%";
+        }
+
+    </script>
+
+</body>
+
+</html>
